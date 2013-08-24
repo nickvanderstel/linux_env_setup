@@ -10,8 +10,8 @@ POLICY=REJECT
 SSH_PORT=22
 
 # tcp & udp ports to allow (include ssh port here)
-TCP_PORTS=(22 80)
-UDP_PORTS=()
+TCP_PORTS=(22 135 139 445)
+UDP_PORTS=(137 138 38294)
 
 # ---------- end of configuration section --------------
 # flush all rules
