@@ -1,3 +1,5 @@
 [user]
 	name = nick
 	email = nick@todash.org
+[color]
+	ui = true
