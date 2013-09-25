@@ -1,19 +1,9 @@
 #!/bin/bash
 # ip6tables configuration script
 
-# -------------- configuration section -----------------
-# DROP or REJECT filtered packets
-#POLICY=DROP
-POLICY=REJECT
+### load port rules ###
+source ./port_config.sh
 
-# ssh port
-SSH_PORT=22
-
-# tcp & udp ports to allow (include ssh port here)
-TCP_PORTS=(22 135 139 445)
-UDP_PORTS=(137 138 38294)
-
-# ---------- end of configuration section --------------
 # flush all rules
 ip6tables -F
 ip6tables -X
