@@ -18,6 +18,8 @@ iptables -N DROP_SSH
 iptables -N UDP
 iptables -N TCP
 
+### NAT Masquerading ###
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ### input rule chain ###
 
@@ -56,7 +58,13 @@ iptables -A OUTPUT -j ACCEPT
 
 ### forward rule chain ###
 
-# do not allow any packet forwarding
+# Allow existing connections
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+# OpenVPN forwarding rule
+iptables -A FORWARD -i tun+ -s 10.8.0.0/24 -m conntrack --ctstate NEW -j ACCEPT
+
+# do not allow any other packet forwarding
 iptables -A FORWARD -j DROP
 
 
