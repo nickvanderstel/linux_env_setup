@@ -34,7 +34,8 @@ if has('win32') || has('win64')
   set directory=~/swap,$TMP
 
   " set my font preference
-  set guifont=Sheldon_Narrow:h9:cANSI
+  "set guifont=Sheldon_Narrow:h9:cANSI
+  set guifont=Liberation_Mono:h8:cANSI
   "set guifont=Envy_Code_R:h8:cANSI
 
   " force vim files to be unix format
@@ -51,7 +52,8 @@ elseif has('win32unix')
   " set my gtk-vim compatible font preference (Sheldon renders badly for some 
   " reason in GTK)
   "set guifont=Envy\ Code\ R\ 8
-  set guifont=ProFontWindows\ 9
+  set guifont=Courier_New:h10:cANSI
+  "set guifont=ProFontWindows\ 9
 else
   set guioptions=eirL
   " For *ix systems use the .vim directory
@@ -68,8 +70,8 @@ else
   "set guifont=ProFontWindows\ 9
   "set guifont=ProFont\ 10
   "set guifont=AnonymousPro\ 9
+  set guifont=Courier_New:h10:cANSI
   "set guifont=Envy_Code_R:h8:cANSI
-  set guifont=Courier\ 10\ Pitch\ 10
 endif
 
 " Force the default the CWD to be $HOME
@@ -226,12 +228,12 @@ if v:version >= 700
   set tabpagemax=25
 endif
 
-" set the correct gui colorscheme
-if has("gui_running")
-  colorscheme wombat
-else
-  colorscheme elflord
-endif
+" set the correct colorscheme
+try
+    colorscheme wombat
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme elflord
+endtry
 
 " if this is vim7, turn on the cursorline highlighting but only in modifiable 
 " buffers
@@ -278,7 +280,7 @@ set path=.
 
 " Set the diffoptions
 "set diffopt=filler,icase,iwhite,vertical
-set diffopt=filler,vertical
+set diffopt=filler,vertical,iwhite
 
 " Force the keywordprg to be :help on all platforms
 set keywordprg=:help
@@ -354,6 +356,7 @@ nmap <silent> <F2> :set invlist<CR>
 nmap <silent> <F3> :set invhlsearch<CR>
 
 " setup F4 to insert line numbers into the file
+map <F4> :execute "vimgrep /" . expand("<cword>") . "/j ./**/*.[c,h]" <bar> cw<CR>
 "nnoremap <silent> <F4> :%s/^/\=strpart(line('.')."     ",0,5)/<CR>
 "vnoremap <silent> <F4> :s/^/\=strpart((line('.')-line("'<")+1)."     ",0,5)/<CR>
 
