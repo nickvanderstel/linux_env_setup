@@ -408,10 +408,10 @@ noremap ,p :cprevious <bar> if foldclosed('.') != -1 <bar> foldopen! <bar> endif
 
 " Some commands to reduce the number of keystrokes required to move between
 " windows
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-k> <C-W><C-K>
-nnoremap <C-h> <C-W><C-H>
-nnoremap <C-l> <C-W><C-L>
+"nnoremap <C-j> <C-W><C-J>
+"nnoremap <C-k> <C-W><C-K>
+"nnoremap <C-h> <C-W><C-H>
+"nnoremap <C-l> <C-W><C-L>
 
 " Create some maps for the commands to open up the filename under the cursor in 
 " a new window, and in a new tab.
@@ -817,5 +817,13 @@ function! CurTabBufFindExec(pat, cmd)
     endif
   endfor
 endfunction " function! CurTabBufFindExec(pat, cmd)
+
+"minibufexpl settings
+let g:miniBufExplVSplit = 20
+
+"taglist settings
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Auto_Open = 1
 
 " vim:ts=2:sts=2:sw=2
