@@ -1,2 +1,2 @@
-linux_tools
-===========
+linux_env_setup
+===============
