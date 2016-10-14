@@ -2,12 +2,21 @@
 " Plugin section
 call plug#begin()
 
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
+Plug 'powerline/fonts', { 'do': './install.sh' }
 Plug 'vim-airline/vim-airline'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-obsession'
+"Plug 'equalsraf/neovim-gui-shim'
 
 call plug#end()
+
+
+let g:airline_powerline_fonts=1
 
 
 " Set the cwd to the location of the file opened by default
@@ -35,7 +44,7 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 
 
 " map jk to esc to save a lot of reaching  
-noremap! jk <Esc>
+inoremap jk <Esc>
 
 
 " number formats to use for <C-A> and <C-X>
@@ -52,5 +61,15 @@ set shiftwidth=4
 set expandtab
 
 
+" don't delete buffers when you switch
+set hidden
+
+
 " colorscheme
-colorscheme wombat
+colorscheme base16-tomorrow-night
+
+
+" load session if exists
+"if filereadable('Session.vim')
+"    source 'Session.vim'
+"endif
