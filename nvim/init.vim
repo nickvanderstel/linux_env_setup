@@ -17,9 +17,11 @@ Plug 'tpope/vim-obsession'
 call plug#end()
 
 
-let g:airline_powerline_fonts=1
+" airline specific config
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#obsession#enabled = 1
 
 
 " Set the cwd to the location of the file opened by default
