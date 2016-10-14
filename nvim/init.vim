@@ -6,6 +6,7 @@ call plug#begin()
 Plug 'chriskempson/base16-vim'
 Plug 'powerline/fonts', { 'do': './install.sh' }
 Plug 'vim-airline/vim-airline'
+Plug 'mkitt/tabline.vim'
 Plug 'ludovicchabant/vim-gutentags'
 "Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -17,6 +18,8 @@ call plug#end()
 
 
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 
 " Set the cwd to the location of the file opened by default
