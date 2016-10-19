@@ -35,6 +35,9 @@ Plug 'tpope/vim-sleuth'
 " unite
 Plug 'Shougo/denite.nvim'
 
+" add quotes and parenthesis etc easier
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 
