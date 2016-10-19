@@ -22,7 +22,7 @@ determine_os() {
 
 # determine if software is installed
 is_installed () {
-    if $(which $@); then
+    if which $1 &> /dev/null; then
         true
     else
         false
@@ -34,7 +34,7 @@ ensure_root_access () {
     if [ $(id -u) -ne 0 ]; then
         # not running as root
         if $(sudo -v); then
-            SUDO_CMD='SUDO'
+            SUDO_CMD='sudo'
         else
             echo "No root access, exiting..."
             exit
