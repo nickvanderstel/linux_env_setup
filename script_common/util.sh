@@ -20,29 +20,24 @@ determine_os() {
 }
 
 
-# determine if a package is installed
+# determine if software is installed
 is_installed () {
-    determine_os
+    if $(which $@); then
+        true
+    else
+        false
+    fi
+}
 
-    case "$OS_RELEASE_ID" in
-        "fedora")
-            if dnf list installed "$@" >/dev/null 2>&1; then
-                true
-            else
-                false
-            fi
-            ;;
-        "debian")
-            if dpkg -s "$@" >/dev/null 2>&1; then
-                true
-            else
-                false
-            fi
-            ;;
-        *)
-            # uknown os, exit
-            echo "Unknown OS type, exiting..."
+ensure_root_access () {
+    SUDO_CMD=''
+    if [ $(id -u) -ne 0 ]; then
+        # not running as root
+        if $(sudo -v); then
+            SUDO_CMD='SUDO'
+        else
+            echo "No root access, exiting..."
             exit
-            ;;
-    esac
+        fi
+    fi
 }
