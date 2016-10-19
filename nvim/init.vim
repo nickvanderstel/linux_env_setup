@@ -2,17 +2,38 @@
 " Plugin section
 call plug#begin()
 
+" colorschemes
 "Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
+
+" status line
 Plug 'powerline/fonts', { 'do': './install.sh' }
 Plug 'vim-airline/vim-airline'
 Plug 'mkitt/tabline.vim'
+
+" ctags
 Plug 'ludovicchabant/vim-gutentags'
+
+" file tree
 "Plug 'scrooloose/nerdtree'
+
+" git integration
 Plug 'tpope/vim-fugitive'
+
+" language pack
 Plug 'sheerun/vim-polyglot'
+
+" session management
 Plug 'tpope/vim-obsession'
+
+" helper for guis
 "Plug 'equalsraf/neovim-gui-shim'
+
+" automatically sets tab mode
+Plug 'tpope/vim-sleuth'
+
+" unite
+Plug 'Shougo/denite.nvim'
 
 call plug#end()
 
