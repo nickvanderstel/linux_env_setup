@@ -35,7 +35,7 @@ install_neovim () {
     case "$OS_RELEASE_ID" in
         "fedora")
             $SUDO_CMD dnf -y install dnf-plugins-core
-            $SUDO_CMD dnf -y install copr enable dperson/neovim
+            $SUDO_CMD dnf -y copr enable dperson/neovim
             $SUDO_CMD dnf -y install neovim
             $SUDO_CMD pip3 install neovim
             ;;
