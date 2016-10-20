@@ -24,6 +24,8 @@ else
 fi
 
 
+# need to make sure ctags is installed
+
 if ! is_installed nvim; then
     install_neovim
 else
