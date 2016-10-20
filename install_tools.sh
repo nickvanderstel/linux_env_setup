@@ -24,7 +24,12 @@ else
 fi
 
 
-# need to make sure ctags is installed
+if ! is_installed ctags; then
+    install_ctags
+else
+    echo "python3 already installed"
+fi
+
 
 if ! is_installed nvim; then
     install_neovim
