@@ -98,6 +98,8 @@ set expandtab
 " don't delete buffers when you switch
 set hidden
 
+" reload file changes
+set autoread
 
 " colorscheme
 colorscheme base16-tomorrow-night
