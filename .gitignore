@@ -1,3 +1,7 @@
 plugged
 .netrwhist
 *tags
+-status
+Session.vim
+plug.vim.old
+
