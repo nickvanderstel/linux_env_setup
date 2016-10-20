@@ -38,6 +38,11 @@ Plug 'Shougo/denite.nvim'
 " add quotes and parenthesis etc easier
 Plug 'tpope/vim-surround'
 
+" completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-vim'
+Plug 'Shougo/neco-syntax'
+
 call plug#end()
 
 

@@ -16,6 +16,18 @@ install_git () {
 }
 
 
+install_ctags () {
+    ensure_root_access
+
+    echo "Installing ctags"
+    case "$OS_RELEASE_ID" in
+        "fedora")
+            $SUDO_CMD dnf -y install ctags
+            ;;
+    esac
+}
+
+
 install_python () {
     ensure_root_access
 
