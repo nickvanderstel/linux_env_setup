@@ -33,13 +33,15 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sleuth'
 
 " unite
-Plug 'Shougo/denite.nvim'
+"Plug 'Shougo/denite.nvim'
+Plug 'Shougo/unite.vim'
 
 " add quotes and parenthesis etc easier
 Plug 'tpope/vim-surround'
 
 " completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neocomplete'
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 
@@ -80,6 +82,7 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 " map jk to esc to save a lot of reaching  
 inoremap jk <Esc>
 
+nnoremap <silent> <leader>f :Unite -start-insert buffer file_rec<CR>
 
 " number formats to use for <C-A> and <C-X>
 set nrformats=alpha,hex
@@ -87,6 +90,7 @@ set nrformats=alpha,hex
 
 " formatting options
 set formatoptions=tcrqwan
+set wrap
 set textwidth=160
 filetype plugin indent on
 set tabstop=4
