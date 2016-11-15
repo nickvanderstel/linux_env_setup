@@ -36,3 +36,5 @@ if ! is_installed nvim; then
 else
     echo "nvim already installed"
 fi
+
+# install xclip
