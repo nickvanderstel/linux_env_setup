@@ -99,6 +99,7 @@ set shiftwidth=4
 set expandtab
 set number
 
+
 " check spelling
 set spell
 
@@ -106,11 +107,16 @@ set spell
 " don't delete buffers when you switch
 set hidden
 
+
 " reload file changes
 set autoread
 
+
 " colorscheme
-colorscheme base16-tomorrow-night
+colorscheme elflord
+" make sure spelling errors are underlined instead of highlighted in a terminal
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 
 " load session if exists

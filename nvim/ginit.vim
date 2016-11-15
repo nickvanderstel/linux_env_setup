@@ -5,3 +5,4 @@ Guifont Liberation Mono for Powerline:h9
 
 " use true colors in qt
 set termguicolors
+colorscheme base16-tomorrow-night
