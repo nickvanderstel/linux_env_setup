@@ -102,6 +102,10 @@ set number
 
 " check spelling
 set spell
+" disable spell check in terminal
+augroup terminal
+  autocmd TermOpen * setlocal nospell
+augroup END
 
 
 " don't delete buffers when you switch
