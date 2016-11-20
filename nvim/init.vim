@@ -84,8 +84,13 @@ inoremap jk <Esc>
 
 nnoremap <silent> <leader>f :Unite -start-insert buffer file_rec<CR>
 
+
 " number formats to use for <C-A> and <C-X>
 set nrformats=alpha,hex
+
+
+" map enter to insert new line without entering insert mode
+nmap <CR> o<Esc>
 
 
 " formatting options
