@@ -40,10 +40,26 @@ Plug 'Shougo/unite.vim'
 Plug 'tpope/vim-surround'
 
 " completion
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neocomplete'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/neocomplete'
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
+
+" VHDL stuff
+Plug 'VHDL-indent-93-syntax'
+
+" whitespace highlighting
+Plug 'ntpeters/vim-better-whitespace'
+
+" align stuff
+Plug 'godlygeek/tabular'
+
+" VHDL Interface Plugin
+Plug 'jpr75/vip'
+
+" multiline cursor
+Plug 'terryma/vim-multiple-cursors'
+
 
 call plug#end()
 
@@ -53,6 +69,21 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#obsession#enabled = 1
+
+" deoplete specific config
+let g:deoplete#enable_at_startup = 1
+
+" whitespace options
+let g:strip_whitespace_on_save = 1
+
+" VIP options
+let g:sigPrefix_VIP = ""
+let g:instPrefix_VIP = "u_"
+let g:instSuffix_VIP = ""
+
+" Tabular aliases
+command! -range Tassign Tabularize /<=/l1r1
+command! -range Tsignal Tabularize /^[^:]*\zs:/l1r1 <bar> Tabularize /:=/l1r1
 
 
 " Set the cwd to the location of the file opened by default
@@ -79,7 +110,7 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 tnoremap <C-h> <C-\><C-n><C-w>h
 
 
-" map jk to esc to save a lot of reaching  
+" map jk to esc to save a lot of reaching
 inoremap jk <Esc>
 
 nnoremap <silent> <leader>f :Unite -start-insert buffer file_rec<CR>
@@ -94,7 +125,7 @@ nmap <CR> o<Esc>
 
 
 " formatting options
-set formatoptions=tcrqwan
+set formatoptions=tcrqwn
 set wrap
 set textwidth=160
 filetype plugin indent on
@@ -119,6 +150,14 @@ set hidden
 
 " reload file changes
 set autoread
+
+
+" setup the listchars options, nbsp was added in version 7
+if v:version >= 700
+  set listchars=eol:$,tab:>-,trail:-,extends:<,precedes:>,nbsp:%
+else
+  set listchars=eol:$,tab:>-,trail:-,extends:<,precedes:>
+endif
 
 
 " colorscheme
