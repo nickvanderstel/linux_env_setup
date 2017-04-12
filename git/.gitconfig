@@ -1,6 +1,8 @@
 [user]
 	name = nickvanderstel
 	email = njvander@gmail.com
+[core]
+	autocrlf = input
 [color]
 	ui = true
 [push]
