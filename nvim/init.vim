@@ -1,4 +1,9 @@
 
+if has("win32")
+  let g:python2_host_prog='C:/Python27/python.exe'
+  let g:python3_host_prog='C:/Python36/python.exe'
+endif
+
 " Plugin section
 call plug#begin()
 
@@ -7,7 +12,9 @@ call plug#begin()
 Plug 'chriskempson/base16-vim'
 
 " status line
-Plug 'powerline/fonts', { 'do': './install.sh' }
+if has("unix")
+  Plug 'powerline/fonts', { 'do': './install.sh' }
+endif
 Plug 'vim-airline/vim-airline'
 Plug 'mkitt/tabline.vim'
 
@@ -33,8 +40,13 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sleuth'
 
 " unite
-"Plug 'Shougo/denite.nvim'
-Plug 'Shougo/unite.vim'
+Plug 'Shougo/denite.nvim'
+"Plug 'Shougo/unite.vim'
+Plug 'ujihisa/unite-colorscheme'
+Plug 'tsukkee/unite-tag'
+
+" syntax checking
+"Plug 'scrooloose/syntastic'
 
 " add quotes and parenthesis etc easier
 Plug 'tpope/vim-surround'
@@ -46,7 +58,8 @@ Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 
 " VHDL stuff
-Plug 'VHDL-indent-93-syntax'
+Plug 'cognoscan/vim-vhdl'
+Plug 'jpr75/vip'
 
 " whitespace highlighting
 Plug 'ntpeters/vim-better-whitespace'
@@ -54,12 +67,12 @@ Plug 'ntpeters/vim-better-whitespace'
 " align stuff
 Plug 'godlygeek/tabular'
 
-" VHDL Interface Plugin
-Plug 'jpr75/vip'
-
 " multiline cursor
 Plug 'terryma/vim-multiple-cursors'
 
+" number conversion
+Plug 'glts/vim-magnum'
+Plug 'glts/vim-radical'
 
 call plug#end()
 
@@ -70,25 +83,44 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#obsession#enabled = 1
 
+
 " deoplete specific config
 let g:deoplete#enable_at_startup = 1
 
+
 " whitespace options
 let g:strip_whitespace_on_save = 1
+
 
 " VIP options
 let g:sigPrefix_VIP = ""
 let g:instPrefix_VIP = "u_"
 let g:instSuffix_VIP = ""
 
+
 " Tabular aliases
 command! -range Tassign Tabularize /<=/l1r1
 command! -range Tsignal Tabularize /^[^:]*\zs:/l1r1 <bar> Tabularize /:=/l1r1
 
 
+" syntastic options
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_vhd_checkers = ["vcom"]
+let g:syntastic_vhdl_checkers = ["vcom"]
+
 " Set the cwd to the location of the file opened by default
 cd %:p:h
 
+" fix backspace
+set backspace=indent,eol,start
 
 " disable error beeps
 set noerrorbells
@@ -151,6 +183,9 @@ set hidden
 " reload file changes
 set autoread
 
+
+" don't complete full match, instead show list
+set wildmode=longest,list
 
 " setup the listchars options, nbsp was added in version 7
 if v:version >= 700
