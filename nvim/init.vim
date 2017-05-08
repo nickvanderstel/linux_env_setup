@@ -59,7 +59,7 @@ if has("python3")
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/neocomplete'
-end if
+endif
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 
