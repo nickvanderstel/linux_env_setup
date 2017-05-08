@@ -40,8 +40,11 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sleuth'
 
 " unite
-Plug 'Shougo/denite.nvim'
-"Plug 'Shougo/unite.vim'
+if has("python3")
+  Plug 'Shougo/denite.nvim'
+else
+  Plug 'Shougo/unite.vim'
+endif
 Plug 'ujihisa/unite-colorscheme'
 Plug 'tsukkee/unite-tag'
 
@@ -52,8 +55,11 @@ Plug 'tsukkee/unite-tag'
 Plug 'tpope/vim-surround'
 
 " completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/neocomplete'
+if has("python3")
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/neocomplete'
+end if
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 
