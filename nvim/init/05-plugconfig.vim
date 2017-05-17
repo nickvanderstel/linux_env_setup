@@ -43,7 +43,17 @@ let g:syntastic_vhdl_checkers = ["vcom"]
 
 " Denite options
 nnoremap <silent> <leader>uf :<C-u>Denite buffer<CR>
-nnoremap <silent> <leader>f :Denite -start-insert buffer file_rec<CR>
+nnoremap <silent> <leader>of :Denite -start-insert buffer file_rec<CR>
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
 call denite#custom#map('insert', '<C-y>', '<denite:choose_action>', 'noremap')
+
+
+"call denite#custom#source('file,file/new,buffer,file_rec,line', 'matchers', 'matcher_fuzzy')
+"nnoremap <leader>fs :<C-u>Denite -buffer-name=search -start-insert line<cr>
+
+
+"call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+"nnoremap <leader>fs :Denite grep:`systemlist('pwd')[0]`<CR>
+
+
