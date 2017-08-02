@@ -41,7 +41,7 @@ else
   Plug 'Shougo/unite.vim'
 endif
 Plug 'ujihisa/unite-colorscheme'
-Plug 'tsukkee/unite-tag'
+"Plug 'tsukkee/unite-tag'
 
 " syntax checking
 "Plug 'scrooloose/syntastic'
