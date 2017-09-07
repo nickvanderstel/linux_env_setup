@@ -17,6 +17,8 @@ set backspace=indent,eol,start
 set noerrorbells
 set visualbell
 
+" keep cursor near middle of screen
+set scrolloff=20
 
 " make switching windows easier
 nnoremap <C-j> <C-w>j
