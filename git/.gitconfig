@@ -2,12 +2,11 @@
 	name = nickvanderstel
 	email = njvander@gmail.com
 [core]
-	autocrlf = input
 [color]
 	ui = true
 [push]
 	default = simple
 [alias]
 	au = add -u
-	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
 	st = status
