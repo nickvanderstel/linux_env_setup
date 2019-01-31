@@ -11,5 +11,4 @@ endif
 
 " use true colors in qt
 set termguicolors
-"colorscheme base16-tomorrow-night
-colorscheme base16-apathy
+colorscheme base16-tomorrow-night

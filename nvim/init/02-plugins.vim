@@ -17,7 +17,7 @@ Plug 'mkitt/tabline.vim'
 Plug 'ludovicchabant/vim-gutentags'
 
 " file tree
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " git integration
 Plug 'tpope/vim-fugitive'

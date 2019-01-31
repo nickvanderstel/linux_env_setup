@@ -59,12 +59,10 @@ set expandtab
 set number
 
 
-" check spelling
-set spell
-" disable spell check in terminal
-augroup terminal
-  autocmd TermOpen * setlocal nospell
-augroup END
+" check spelling - only in gui, looks awful in terminal
+if has("gui_running")
+  set spell
+endif
 
 
 " don't delete buffers when you switch
@@ -87,7 +85,12 @@ endif
 
 
 " colorscheme
-colorscheme elflord
+if has("gui_running")
+else
+  "let base16colorspace=256
+  set termguicolors
+  colorscheme elflord
+endif
 " make sure spelling errors are underlined instead of highlighted in a terminal
 hi clear SpellBad
 hi SpellBad cterm=underline

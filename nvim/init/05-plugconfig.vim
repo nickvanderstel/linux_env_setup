@@ -14,7 +14,9 @@ let g:deoplete#enable_at_startup = 1
 
 
 " whitespace options
+let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
 
 
 " VIP options
@@ -58,3 +60,5 @@ call denite#custom#map('insert', '<C-y>', '<denite:choose_action>', 'noremap')
 "nnoremap <leader>fs :Denite grep:`systemlist('pwd')[0]`<CR>
 
 
+" base16 options
+colorscheme base16-tomorrow-night
