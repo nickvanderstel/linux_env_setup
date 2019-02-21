@@ -8,4 +8,5 @@
 	au = add -u
 	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
 	st = status
+	setgithub = !git config user.name "nickvanderstel" && git config user.email "njvander@gmail.com"
 	setwork = !git config user.name "NicholasVanderStel" && git config user.email "nicholas.vanderstel@dornerworks.com"
