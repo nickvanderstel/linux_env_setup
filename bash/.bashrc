@@ -19,6 +19,8 @@ case "$OS_RELEASE_ID" in
         ;;
 esac
 
+PATH=$HOME/.local/bin:$PATH
+export PATH
 
 # color prompt
 if [ "$PS1" ]; then

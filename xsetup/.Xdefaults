@@ -1,0 +1,12 @@
+XTerm*faceName:Liberation Mono for Powerline:pixelsize=12
+XTerm*foreground:gray
+XTerm*background:black
+UXTerm*faceName:Liberation Mono for Powerline:pixelsize=12
+UXTerm*foreground:gray
+UXTerm*background:black
+!Rxvt*font:xft:Liberation Mono for Powerline:pixelsize=12
+Rxvt*foreground:gray
+Rxvt*background:black
+!URxvt*font:xft:Liberation Mono for Powerline:pixelsize=12
+URxvt*foreground:gray
+URxvt*background:black
