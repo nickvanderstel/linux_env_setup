@@ -11,7 +11,7 @@ if has("unix")
   Plug 'powerline/fonts', { 'do': './install.sh' }
 endif
 Plug 'vim-airline/vim-airline'
-Plug 'mkitt/tabline.vim'
+"Plug 'mkitt/tabline.vim'
 
 " ctags
 Plug 'ludovicchabant/vim-gutentags'
@@ -77,6 +77,8 @@ Plug 'glts/vim-radical'
 
 " startup screen
 Plug 'mhinz/vim-startify'
+
+Plug 'vim-scripts/TextFormat'
 
 call plug#end()
 
