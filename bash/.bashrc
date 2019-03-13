@@ -8,6 +8,12 @@ fedora_bashrc() {
     fi
 }
 
+debian_bashrc() {
+    # Source global definitions
+    if [ -f /etc/bash.bashrc ]; then
+        . /etc/bash.bashrc
+    fi
+}
 
 . $HOME/.config/script_common/util.sh
 determine_os
@@ -16,6 +22,9 @@ determine_os
 case "$OS_RELEASE_ID" in
     "fedora")
         fedora_bashrc
+        ;;
+    "debian")
+        debian_bashrc
         ;;
 esac
 
@@ -32,3 +41,4 @@ fi
 alias ll='ls -al --color=auto' 2>/dev/null
 alias l.='ls -d .* --color=auto' 2>/dev/null
 alias ls='ls --color=auto' 2>/dev/null
+alias grep='grep --color=auto'
