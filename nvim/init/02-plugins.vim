@@ -3,7 +3,7 @@
 call plug#begin()
 
 " colorschemes
-"Plug 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 
 " status line
@@ -40,7 +40,7 @@ if has("python3")
 else
   Plug 'Shougo/unite.vim'
 endif
-Plug 'ujihisa/unite-colorscheme'
+"Plug 'ujihisa/unite-colorscheme'
 "Plug 'tsukkee/unite-tag'
 
 " syntax checking
@@ -79,6 +79,11 @@ Plug 'glts/vim-radical'
 Plug 'mhinz/vim-startify'
 
 Plug 'vim-scripts/TextFormat'
+
+
+"LaTeX
+Plug 'lervag/vimtex'
+
 
 call plug#end()
 

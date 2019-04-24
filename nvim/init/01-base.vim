@@ -57,6 +57,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set number
+set modeline
+set modelines=20
 
 
 " check spelling - only in gui, looks awful in terminal
@@ -89,6 +91,7 @@ if has("gui_running")
 else
   "let base16colorspace=256
   set termguicolors
+  " this choice will be overridden by the setting in the plugin options file
   colorscheme elflord
 endif
 " make sure spelling errors are underlined instead of highlighted in a terminal
