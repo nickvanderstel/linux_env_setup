@@ -36,6 +36,8 @@ let g:sigPrefix_VIP = ""
 let g:instPrefix_VIP = "u_"
 let g:instSuffix_VIP = ""
 
+" sleuth options
+"let g:sleuth_automatic = 0
 
 " Tabular aliases
 command! -range Tassign Tabularize /<=/l1r1
@@ -73,7 +75,8 @@ call denite#custom#map('insert', '<C-y>', '<denite:choose_action>', 'noremap')
 
 
 " base16 options
-colorscheme base16-tomorrow-night
+"colorscheme base16-tomorrow-night
+colorscheme PerfectDark
 
 " vimtext
 let g:polyglot_disabled = ['latex']
@@ -83,3 +86,4 @@ let g:vimtex_quickfix_mode=0
 let g:vimtex_view_general_viewer = 'qpdfview'
 let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
 let g:vimtex_view_general_options_latexmk = '--unique'
+
