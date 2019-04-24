@@ -74,3 +74,12 @@ call denite#custom#map('insert', '<C-y>', '<denite:choose_action>', 'noremap')
 
 " base16 options
 colorscheme base16-tomorrow-night
+
+" vimtext
+let g:polyglot_disabled = ['latex']
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+
+let g:vimtex_view_general_viewer = 'qpdfview'
+let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+let g:vimtex_view_general_options_latexmk = '--unique'
