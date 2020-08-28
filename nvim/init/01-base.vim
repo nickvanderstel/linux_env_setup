@@ -50,7 +50,8 @@ nmap <CR> o<Esc>
 " formatting options
 set formatoptions=tcrqwn
 set wrap
-set textwidth=160
+set textwidth=0
+set wrapmargin=0
 filetype plugin indent on
 set tabstop=4
 set softtabstop=4

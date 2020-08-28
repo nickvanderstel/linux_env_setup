@@ -2,6 +2,13 @@
 " Will be split into separate files as necessary
 
 
+
+" NERDTree config
+nnoremap <leader>nf :NERDTreeFocus<CR>
+nnoremap <leader>nr :NERDTreeRefreshRoot<CR>
+autocmd VimEnter * NERDTree
+
+
 " airline specific config
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
