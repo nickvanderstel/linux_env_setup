@@ -6,7 +6,7 @@
 " NERDTree config
 nnoremap <leader>nf :NERDTreeFocus<CR>
 nnoremap <leader>nr :NERDTreeRefreshRoot<CR>
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 
 " airline specific config

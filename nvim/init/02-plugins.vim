@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'
 
 " git integration
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " language pack
 Plug 'sheerun/vim-polyglot'
