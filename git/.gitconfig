@@ -1,5 +1,3 @@
-[core]
-	editor = nvim
 [color]
 	ui = true
 [push]
@@ -11,3 +9,5 @@
 	setgithub = !git config user.name "nickvanderstel" && git config user.email "njvander@gmail.com"
 	setwork = !git config user.name "NicholasVanderStel" && git config user.email "nicholas.vanderstel@dornerworks.com"
 	setgitlab = !git config user.name "nickvanderstel" && git config user.email "nick.vanderstel@protonmail.com"
+[pull]
+	rebase = false
